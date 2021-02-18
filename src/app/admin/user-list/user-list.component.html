@@ -1,0 +1,27 @@
+<div class="container mt-4">
+ <div class="text-right">
+  <button type="button" class="btn btn-success" routerLink="/create-user"> <i class="fas fa-plus-circle" ></i> New user</button>
+ </div>
+  <table class="table table text-center">
+      <thead>
+        <tr>
+          
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">WatchWatch</th>
+          <th *ngIf="isAdmin" scope="col">Edit</th>
+          <th *ngIf="isAdmin" scope="col">delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let foo of userList">
+         
+          <td>{{foo.name}}</td>
+          <td>{{foo.email}}</td>
+          <td><button class="btn btn-outline-primary" routerLink="/detail/{{foo.id}}"><i class="far fa-eye"></i> Watch</button></td>
+          <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/update/{{foo.id}}"><i class="far fa-edit"></i> Edit</button></td>
+          <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="onDelete(foo.id)"><i class="far fa-trash-alt"></i> delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
