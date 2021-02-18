@@ -8,8 +8,8 @@ import { Foo} from '../models/foo';
 })
 export class FooService {
 
-  fooURL = 'http://localhost:9090/foo/';
-  userURl='http://localhost:9090/user/'
+  fooURL = 'http://192.168.11.101:9090/foo/';
+  userURl='http://192.168.11.101:9090/user/'
 
   httpOptions = { headers: new HttpHeaders({'Content-Type' : 'application/json'})};
 
