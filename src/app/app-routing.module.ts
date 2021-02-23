@@ -13,6 +13,7 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { RoleListComponent } from './admin/role-list/role-list.component';
 import { CreateUserComponent } from './admin/create-user/create-user.component';
 import { CreateRoleComponent } from './admin/create-role/create-role.component';
+import { UpdateUserComponent } from './admin/update-user/update-user.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'create-role', component: CreateRoleComponent, canActivate: [FooGuard], data: {requiredRoles: ['admin']}},
   {path: 'create-user', component: CreateUserComponent, canActivate: [FooGuard], data: {requiredRoles: ['admin']}},
   {path: 'signup', component: SignupComponent, canActivate: [SignupGuard]},
+  {path: 'update-user', component: UpdateUserComponent, canActivate: [FooGuard], data: {requiredRoles: ['admin']}},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

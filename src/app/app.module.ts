@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +20,7 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { RoleListComponent } from './admin/role-list/role-list.component';
 import { CreateUserComponent } from './admin/create-user/create-user.component';
 import { CreateRoleComponent } from './admin/create-role/create-role.component';
+import { UpdateUserComponent } from './admin/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +36,18 @@ import { CreateRoleComponent } from './admin/create-role/create-role.component';
     AdminComponent,
     RoleListComponent,
     CreateUserComponent,
-    CreateRoleComponent
+    CreateRoleComponent,
+    UpdateUserComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    FormsModule,
+    ReactiveFormsModule,
+ 
     OAuthModule.forRoot({
       resourceServer: {
           allowedUrls: ['http://localhost:9090/foo'],

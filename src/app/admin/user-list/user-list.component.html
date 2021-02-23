@@ -19,7 +19,7 @@
           <td>{{foo.name}}</td>
           <td>{{foo.email}}</td>
           <td><button class="btn btn-outline-primary" routerLink="/detail/{{foo.id}}"><i class="far fa-eye"></i> Watch</button></td>
-          <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/update/{{foo.id}}"><i class="far fa-edit"></i> Edit</button></td>
+          <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/update/{{foo.id}}" [routerLink]="['/update-user/']" [queryParams]="{id: foo.id}"><i class="far fa-edit"></i> Edit</button></td>
           <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="onDelete(foo.id)"><i class="far fa-trash-alt"></i> delete</button></td>
         </tr>
       </tbody>
